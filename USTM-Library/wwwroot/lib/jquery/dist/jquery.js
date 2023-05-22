@@ -11,6 +11,13 @@
  *
  * Date: 2020-05-04T22:49Z
  */
+
+$(document).ready(function () {
+	$("#reservarBtn").click(function () {
+		$("#myModal").modal('show'); // Aqui, estamos exibindo o modal com o id "myModal"
+	});
+});
+
 ( function( global, factory ) {
 
 	"use strict";

@@ -1,0 +1,54 @@
+﻿@model bibliography
+@{
+	ViewData["Title"] = "Details";
+}
+<body>
+	<section id="livro" class="padding ">
+		<div class="container">
+			<img src="@Model.PicUrl" class="left">
+
+			<h2>@Html.DisplayFor(book => book.Title)</h2>
+			<h4>Ficha Técnica:</h4>
+
+			<ul>
+				<li>Autor(a): <b>@Html.DisplayFor(book => book.Author)</b></li>
+				<li>Páginas: <b>@Html.DisplayFor(book => book.Pages)</b></li>
+				<li>Editora <b>@Model.PublishingCompany</b></a>
+				<li>Ano de Lançamento: <b>@Html.DisplayFor(book => book.Year)</b></li>
+				<li>ISBN: <b>@Html.DisplayFor(book => book.ISBN)</b></li>
+				<li>Assunto: <b>@Html.DisplayFor(book => book.Category)</b>
+			</ul>
+
+			<h3>Sinopse</h3>
+			<p>@Html.DisplayFor(book => book.Description)</p>
+			<a  id="reservarBtn" class="button">Reservar!</a>
+			<a href="" class="button">Ler!</a>
+		</div>
+	</section>
+
+	<div class="clear padding"></div>
+	<footer>
+		<div class="container">
+			<span class="left">© 2022 USTM</span>
+			<span class="right">Leia ou Reserve seu livro com maior facilidade!</span>
+		</div>
+	</footer>
+</body>
+<!--Comprovativ Modal-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Reservar</h4>
+			</div>
+			<div class="modal-body">
+				<!-- Adicione aqui o conteúdo do modal, como formulário de reserva, por exemplo -->
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+				<button type="button" class="btn btn-primary">Salvar</button>
+			</div>
+		</div>
+	</div>
+</div>
