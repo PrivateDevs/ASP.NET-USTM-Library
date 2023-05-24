@@ -1,65 +1,47 @@
 ﻿@page
 @model LoginModel
 
-@{
-    ViewData["Title"] = "Log in";
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="~/css/loginStyle.css">
+</head>
+<body>
+    <main id="container">
 
-<h1>@ViewData["Title"]</h1>
+        <h1>Login</h1>
+        <form id="account" method="post">
+            <fieldset>
+                <legend>
+                    Username
+                </legend>
+                <input asp-for="Input.UserName" class="input" autocomplete="username" aria-required="true" type="text" placeholder="Digite o seu username">
+                <span asp-validation-for="Input.UserName" class="text-danger"></span>
+            </fieldset><br><br>
+            <fieldset>
+                <legend>
+                    Password
+                </legend>
+                <input asp-for="Input.Password" class="input" autocomplete="current-password" aria-required="true" placeholder="Digite a sua password">
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </fieldset>
+            <button id="login-submit" type="submit"><span>ENTRAR</span></button>
+        </form>
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    </main>
+</body>
+</html>
 
 
- <form id="login" class="input-group">
-    <input type="text" class="input-field" placeholder="User Id" required>
-    <input type="text" class="input-field" placeholder="Senha" required>
-    <input type="checkbox" class="check-box"><span>Remember Password</span>
-    <!-- <button type="submit" class="submit-btn">Log in </button> -->
-    <a href="index.html" class="submit-btn">Log in</a>
- </form>
 
-<div class="row">
-    <div class="col-md-4">
-        <section>
-            <form id="account" method="post">
-                <h2>Use a local account to log in.</h2>
-                <hr />
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-floating">
-                    <input asp-for="Input.IdUser" class="form-control" autocomplete="username" aria-required="true" />
-                    <label asp-for="Input.IdUser" class="form-label"></label>
-                    <span asp-validation-for="Input.IdUser" class="text-danger"></span>
-                </div>
-                <div class="form-floating">
-                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" />
-                    <label asp-for="Input.Password" class="form-label"></label>
-                    <span asp-validation-for="Input.Password" class="text-danger"></span>
-                </div>
-                <div>
-                    <div class="checkbox">
-                        <label asp-for="Input.RememberMe" class="form-label">
-                            <input class="form-check-input" asp-for="Input.RememberMe" />
-                            @Html.DisplayNameFor(m => m.Input.RememberMe)
-                        </label>
-                    </div>
-                </div>
-                <div>
-                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
-                </div>
-                <div>
-                    <p>
-                        <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
-                    </p>
-                    <p>
-                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
-                    </p>
-                    <p>
-                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
-                    </p>
-                </div>
-            </form>
-        </section>
-    </div>
-   
-</div>
+
+
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
