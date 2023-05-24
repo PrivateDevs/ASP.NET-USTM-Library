@@ -61,7 +61,39 @@ a {
     color: #E05D22;
 }
 
-ul li {
+.search {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.logger {
+    padding-left: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+    .logger li:hover {
+        cursor: pointer;
+    }
+
+    .logger li {
+        margin-top: -10px;
+    }
+
+        .logger li button {
+            color: white;
+            background: none;
+            border: none;
+        }
+            .logger li button:hover {
+                background: #EA9D48;
+                border-bottom: 2px solid #AD7436;
+                padding: 11px 15px;
+                text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+                text-transform: uppercase;
+            }
+            ul li {
     list-style: none
 }
 
@@ -146,7 +178,10 @@ textarea {
 header {
     background: url(../img/bookshelf.png) fixed
 }
-
+a:hover {
+    text-decoration: none;
+    color: #ffff;
+}
 nav {
     background: #fdab50;
     padding: 10px 0;

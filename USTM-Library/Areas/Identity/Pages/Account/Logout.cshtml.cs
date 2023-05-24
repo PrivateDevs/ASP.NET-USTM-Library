@@ -30,7 +30,7 @@ namespace USTM_Library.Areas.Identity.Pages.Account
             _logger.LogInformation("User logged out.");
             if (returnUrl != null)
             {
-                return LocalRedirect(returnUrl);
+                return RedirectToAction("LandigPage","LandingPage");
             }
             else
             {
