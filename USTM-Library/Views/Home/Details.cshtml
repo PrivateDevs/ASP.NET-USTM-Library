@@ -25,23 +25,13 @@
 		<h3>Sinopse</h3>
 		<p>@Html.DisplayFor(book => book.Description)</p>
 		<a id="reservarBtn" data-bs-toggle="modal" data-bs-target="#reservationModal" class="button">Reservar!</a>
-		<a data-bs-toggle="modal" data-bs-target="#exampleModal" class="button">Ler!</a>
+		<a asp-action="ReadingPage" asp-controller="Home" asp-route-id="@Model.Id" class="button">Ler!</a>
 	</div>
 </section>
 
-<!-- Modal Fo read-->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-fullscreen-xxl-down">
-		<div class="modal-content">
-			<div class="modal-body">
-				<embed src="@Model.BookUrl" class="w-100 h-75"/>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="button" data-bs-dismiss="modal">Close</button>
-			</div>
-		</div>
-	</div>
-</div>
+
+
+
 
 
 <!-- Modal For reservation-->

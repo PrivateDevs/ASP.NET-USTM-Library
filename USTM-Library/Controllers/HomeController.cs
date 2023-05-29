@@ -72,7 +72,20 @@ namespace USTM_Library.Controllers
         public IActionResult About()
         {
             return View();
-        }
+        }  public IActionResult ReadingPage(int? id)
+        {
+			bibliography book = null;
+
+			foreach (bibliography b in bibliographies)
+			{
+
+				if (b.Id == id)
+				{
+					book = b;
+				}
+			}
+			return View(book);
+		}
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
