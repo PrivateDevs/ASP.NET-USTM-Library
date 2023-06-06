@@ -2,8 +2,8 @@
 
 ## To do
 
-- [ ] Ler(Na mesma pagina e eliminar os botões de download e imprimir)
-- [ ] Design pattern
-- [ ] Reservar
-- [ ] imprirmir comprovativo
+- [x] Ler(Na mesma pagina e eliminar os botões de download e imprimir)
+- [x] Design pattern
+- [x] Reservar
+- [x] imprirmir comprovativo
 - [x] Login
